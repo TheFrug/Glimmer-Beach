@@ -12,8 +12,6 @@ public class DialogManager : MonoBehaviour
     public GameObject bodyTextPanel;
     [Tooltip("Insert the UI panel that parents the name of the speaker")]
     public GameObject speakerNamePanel;
-    [Tooltip("Insert the UI panel that parents the portrait of the speaker")]
-    public GameObject speakerPortraitPanel;
 
     [Header("UI Objects")]
     [Tooltip("Insert the text element that renders the main text you want in the dialog box")]
@@ -21,9 +19,8 @@ public class DialogManager : MonoBehaviour
     [Tooltip("Insert the text element that renders the speaker's name in the name box")]
     public TextMeshProUGUI speakerNameText;
     [Tooltip("Insert the image element that renders the sprite for the speaker's portrait")]
-    public Image speakerPortrait;
 
-
+    public GameObject currentGlimmer;
     private Dialog dialogTemp;
     private AudioSource audioSource;
     [HideInInspector] public AudioClip clip;
@@ -45,11 +42,14 @@ public class DialogManager : MonoBehaviour
         }
         textBlocksToShow = new Queue<string>();
         soundClipsToPlay = new Queue<AudioClip>();
+        
     }
 
     public void StartDialog(Dialog dialog)
     {
         dialogTemp = dialog;
+
+        currentGlimmer = dialog.glimmer;
 
         bodyTextPanel.SetActive(true); //Makes body text panel appear
 
@@ -58,12 +58,6 @@ public class DialogManager : MonoBehaviour
         {
             speakerNamePanel.SetActive(true);
             speakerNameText.text = dialog.name;
-        }
-        //Makes portrait panel appear if there is one.  
-        if (dialog.portrait != null)
-        {
-            speakerPortraitPanel.SetActive(true);
-            speakerPortrait.sprite = dialog.portrait;
         }
         inConversation = true;
 
@@ -97,6 +91,8 @@ public class DialogManager : MonoBehaviour
         if (textBlocksToShow.Count == 0)
         {
             EndDialog();
+            Destroy(currentGlimmer);
+
             return;
         }
         //Moves the text queue down
@@ -142,6 +138,5 @@ public class DialogManager : MonoBehaviour
         //Sets each panel inactive
         bodyTextPanel?.SetActive(false);
         speakerNamePanel?.SetActive(false);
-        speakerPortraitPanel?.SetActive(false);
     }
 }

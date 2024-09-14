@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 431722912009616810}
   - component: {fileID: 1435330057486464966}
   - component: {fileID: 5201677746912878936}
-  - component: {fileID: 3270008248782614656}
   m_Layer: 0
   m_Name: Glimmer
   m_TagString: Untagged
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3270008248782614656
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508577035177776298}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2029485502681715785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,7 +176,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextInteractable
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 674322233509138748, guid: 7e015e399b12efe40bc786f1ffed6065, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e015e399b12efe40bc786f1ffed6065, type: 3}
 --- !u!4 &1545159291048281460 stripped
 Transform:
@@ -198,3 +185,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2029485502681715785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1545159291048281463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 674322233509138750, guid: 7e015e399b12efe40bc786f1ffed6065,
+    type: 3}
+  m_PrefabInstance: {fileID: 2029485502681715785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5368356061948300006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545159291048281463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b95505b77c8bc043bcb671fbe3ed3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+    glimmer: {fileID: 0}
+    name: 
+    textBlocks: []
+    soundClips: []
