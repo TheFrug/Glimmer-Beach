@@ -11,6 +11,11 @@ public class Inventory : MonoBehaviour
     public bool sailcloth = false;
     public bool compass = false;
 
+    public Dialog raftDialog;
+    public Dialog lanternDialog;
+    public Dialog sailclothDialog;
+    public Dialog compassDialog;
+
     public float glimmers = 0;
 
     private void Awake()
@@ -27,7 +32,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
     public void GetGlimmer()
     {
         glimmers += 1;
@@ -35,8 +39,12 @@ public class Inventory : MonoBehaviour
 
         if (glimmers >= 4)
         {
-            Debug.Log("I can use the raft now!");
+            //TODO: Dialog can't be progressed or taken off the screen
+            Debug.Log("Should pull up dialog now");
+            FindObjectOfType<DialogManager>().StartDialog(raftDialog);
             raft = true;
         }
     }
+
+    
 }

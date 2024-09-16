@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+
     [Header("UI Panels")]
     [Tooltip("Insert the UI panel that parents the main text of your dialog")]
     public GameObject bodyTextPanel;
@@ -25,6 +27,7 @@ public class DialogManager : MonoBehaviour
     private AudioSource audioSource;
     [HideInInspector] public AudioClip clip;
     [HideInInspector] public string text;
+    //TODO: Move inConversation from DialogManager to Player state machine.
     [HideInInspector] public bool inConversation = false;
 
     private Queue<string> textBlocksToShow; //This stores the text blocks that are loaded and have yet to be shown
@@ -32,6 +35,7 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
+
         //If the object has an audio source, get reference to it.  If not, create a generic one.
         if (gameObject.GetComponent<AudioSource>() == null) {
             audioSource = gameObject.AddComponent<AudioSource>();
@@ -42,14 +46,18 @@ public class DialogManager : MonoBehaviour
         }
         textBlocksToShow = new Queue<string>();
         soundClipsToPlay = new Queue<AudioClip>();
-        
     }
 
     public void StartDialog(Dialog dialog)
     {
+        //TODO: SET PLAYER STATE TO 'inConversation'
+        player.GetComponent<playerInput>().SwapState(PlayerState.inConversation);
+
         dialogTemp = dialog;
 
-        currentGlimmer = dialog.glimmer;
+        if (dialog.glimmer != null) {
+            currentGlimmer = dialog.glimmer;
+        }
 
         bodyTextPanel.SetActive(true); //Makes body text panel appear
 
@@ -59,6 +67,7 @@ public class DialogManager : MonoBehaviour
             speakerNamePanel.SetActive(true);
             speakerNameText.text = dialog.name;
         }
+
         inConversation = true;
 
         //These two lines clear any remaining audio/text clips
@@ -131,6 +140,8 @@ public class DialogManager : MonoBehaviour
     //Closes relative panels
     public void EndDialog()
     {
+        player.GetComponent<playerInput>().SwapState(PlayerState.free);
+
         //Resets all values that were stored for the interaction
         inConversation = false;
         dialogTemp = null;

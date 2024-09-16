@@ -22,6 +22,7 @@ public class GlimmerInteractable : MonoBehaviour
 
     void Update()
     {
+        //TODO: Move this command to playerInput script.  By the end, this should just run UseGlimmer();
         if (Input.GetKeyDown(KeyCode.K) && (!dManager.inConversation) && playerInRange)
         {
             TriggerDialog();
