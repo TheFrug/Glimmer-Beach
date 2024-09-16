@@ -92,6 +92,7 @@ public class DialogManager : MonoBehaviour
         {
             EndDialog();
             Destroy(currentGlimmer);
+            Inventory.Instance.glimmers += 1;
 
             return;
         }
