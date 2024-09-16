@@ -14,7 +14,7 @@ public class RiverCrossingPoint : MonoBehaviour
 
     private void Update()
     {
-        if (triggerActive)
+        if ((triggerActive) && !(Inventory.Instance.raft))
         {
             GetComponent<MeshRenderer>().enabled = true;
         }

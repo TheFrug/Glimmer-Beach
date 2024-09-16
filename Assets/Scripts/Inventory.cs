@@ -27,10 +27,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Update()
+
+    public void GetGlimmer()
     {
+        glimmers += 1;
+        Debug.Log("I've got " + glimmers + " glimmers now. I just have " + (4-glimmers) + " to go!");
+
         if (glimmers >= 4)
         {
+            Debug.Log("I can use the raft now!");
             raft = true;
         }
     }
