@@ -5,40 +5,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum PlayerState
-{
-    free,
-    inConversation
-}
-
 public class playerInput : MonoBehaviour
 {
+    [SerializeField] private DialogManager dManager;
 
-    public static playerInput Instance { get; private set; }
+    public bool freeMove; //Can player move
 
     public float speed = 5f;
     public Rigidbody rb;
-    Vector3 movement;
-
-    public PlayerState playerState;
+    [HideInInspector] public Vector3 movement;
 
     void Start()
     {
-        playerState = PlayerState.free;
+        freeMove = true;
     }
 
     void Update()
     {
-        if (playerState == PlayerState.free)
+        if (freeMove)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.z = Input.GetAxisRaw("Vertical");
         }
-    }
 
-    public void SwapState(PlayerState state)
-    {
-        playerState = state;
+        if (Input.GetKeyDown(KeyCode.K) && (dManager.inConversation)){
+            dManager.NextTextBlock();
+        }
     }
 
 

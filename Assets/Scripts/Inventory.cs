@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
         glimmers += 1;
         Debug.Log("I've got " + glimmers + " glimmers now. I just have " + (4-glimmers) + " to go!");
 
-        if (glimmers >= 4)
+        if (glimmers == 4)
         {
             //TODO: Dialog can't be progressed or taken off the screen
             Debug.Log("Should pull up dialog now");

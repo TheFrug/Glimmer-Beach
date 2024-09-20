@@ -50,12 +50,13 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
-        //TODO: SET PLAYER STATE TO 'inConversation'
-        player.GetComponent<playerInput>().SwapState(PlayerState.inConversation);
+        FindObjectOfType<playerInput>().movement.x = 0;
+        FindObjectOfType<playerInput>().movement.z = 0;
 
         dialogTemp = dialog;
 
         if (dialog.glimmer != null) {
+
             currentGlimmer = dialog.glimmer;
         }
 
@@ -95,7 +96,6 @@ public class DialogManager : MonoBehaviour
 
     public void NextTextBlock()
     {
-
         //If there is no text in the queue, run EndDialog
         if (textBlocksToShow.Count == 0)
         {
@@ -112,6 +112,7 @@ public class DialogManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(TypeText(text));
         }
+
         //Moves the sound queue down and then plays that sound clip
         if (soundClipsToPlay != null)
         {
@@ -140,7 +141,9 @@ public class DialogManager : MonoBehaviour
     //Closes relative panels
     public void EndDialog()
     {
-        player.GetComponent<playerInput>().SwapState(PlayerState.free);
+        Debug.Log("Shutting Up now");
+
+        player.GetComponent<playerInput>().freeMove = true;
 
         //Resets all values that were stored for the interaction
         inConversation = false;

@@ -7,9 +7,11 @@ public class GlimmerInteractable : MonoBehaviour
     public Dialog dialog;
     private DialogManager dManager;
     private bool playerInRange;
+    private GameObject player;
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
         dManager = FindObjectOfType<DialogManager>();
         //Helpful reminder that the script requires a box collider
         if (gameObject.GetComponent<BoxCollider>() == null)
@@ -22,15 +24,11 @@ public class GlimmerInteractable : MonoBehaviour
 
     void Update()
     {
-        //TODO: Move this command to playerInput script.  By the end, this should just run UseGlimmer();
-        if (Input.GetKeyDown(KeyCode.K) && (!dManager.inConversation) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.K) && (!dManager.inConversation) && playerInRange) //If not in conversation and player on glimmer, run start dialog
         {
+            player.GetComponent<playerInput>().freeMove = false;
             TriggerDialog();
-            UseGlimmer();
-        }
-        else if (Input.GetKeyDown(KeyCode.K) && (dManager.inConversation) && playerInRange)
-        {
-            dManager.NextTextBlock();
+            //UseGlimmer();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -58,7 +56,7 @@ public class GlimmerInteractable : MonoBehaviour
 
     public void TriggerDialog()
     {
-        FindObjectOfType<DialogManager>().StartDialog(dialog);
+        dManager.StartDialog(dialog);
     }
 
     private void UseGlimmer()
