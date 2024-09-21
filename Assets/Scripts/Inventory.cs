@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public bool lantern = false;
     public bool sailcloth = false;
     public bool compass = false;
+    public GameObject raftDown = null;
 
     public Dialog raftDialog;
     public Dialog lanternDialog;
@@ -45,6 +46,4 @@ public class Inventory : MonoBehaviour
             raft = true;
         }
     }
-
-    
 }
