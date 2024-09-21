@@ -30,7 +30,6 @@ public class RiverCrossingPoint : MonoBehaviour
                 pointALive = true;
             }
         }
-
     }
 
     //Tells parent RiverCrossing what point the player is standing on
@@ -38,15 +37,10 @@ public class RiverCrossingPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(myPoint == Point.A)
-            {
-                rcManager.onPointA = true;
-            }
-            if(myPoint == Point.B)
-            {
-                rcManager.onPointB = true;
-            }
-
+            if(myPoint == Point.A) {
+                rcManager.onPointA = true; }
+            if(myPoint == Point.B) {
+                rcManager.onPointB = true; }
         }
     }
 
@@ -55,14 +49,10 @@ public class RiverCrossingPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (myPoint == Point.A)
-            {
-                rcManager.onPointA = false;
-            }
-            if (myPoint == Point.B)
-            {
-                rcManager.onPointB = false;
-            }
+            if (myPoint == Point.A) {
+                rcManager.onPointA = false; }
+            if (myPoint == Point.B) {
+                rcManager.onPointB = false; }
         }
     }
 }

@@ -29,6 +29,7 @@ public class DialogManager : MonoBehaviour
     [HideInInspector] public string text;
     //TODO: Move inConversation from DialogManager to Player state machine.
     [HideInInspector] public bool inConversation = false;
+    [SerializeField] private float typingSpeed;
 
     private Queue<string> textBlocksToShow; //This stores the text blocks that are loaded and have yet to be shown
     private Queue<AudioClip> soundClipsToPlay; //This stores the audio clips that are loaded and have yet to be shown
@@ -134,7 +135,8 @@ public class DialogManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             bodyText.text += letter;
-            yield return null;
+            AudioManager.instance.Play("dialogBlip");
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 

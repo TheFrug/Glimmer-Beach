@@ -42,8 +42,8 @@ public class RiverCrossing : MonoBehaviour
     void Update()
     {
         if ((Input.GetKeyDown(KeyCode.K)) && (onPointA || onPointB) && (Inventory.Instance.raft)){
+            Debug.Log("Working?");
             DeployRaft();
-            TogglePointMesh();
         }
     }
 
@@ -53,32 +53,29 @@ public class RiverCrossing : MonoBehaviour
         if (player.raftDown != true)
         {
             Debug.Log("deploying");
+            AudioManager.instance.Play("raftDownSound");
             raft.SetActive(true);
             player.raftDown = raft;
+
+            pointA.GetComponent<MeshRenderer>().enabled = true;
+            pointB.GetComponent<MeshRenderer>().enabled = true;
         }
         else if (player.raftDown)
         {
             player.raftDown = null;
             raft.SetActive(false);
-        }
-    }
 
-    public void TogglePointMesh()
-    {
-        if (player.raftDown)
-        {
             if (onPointA)
-            {
-                Debug.Log("Fuck");
-                pointA.GetComponent<MeshRenderer>().enabled = false;
-                pointB.GetComponent<MeshRenderer>().enabled = true;
-            }
-            else if (onPointB)
             {
                 pointA.GetComponent<MeshRenderer>().enabled = true;
                 pointB.GetComponent<MeshRenderer>().enabled = false;
             }
+            if (onPointB)
+            {
+                pointA.GetComponent<MeshRenderer>().enabled = false;
+                pointB.GetComponent<MeshRenderer>().enabled = true;
+            }
+
         }
     }
-
 }
