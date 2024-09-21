@@ -62,6 +62,7 @@ public class RiverCrossing : MonoBehaviour
         }
         else if (player.raftDown)
         {
+            AudioManager.instance.Play("raftUpSound");
             player.raftDown = null;
             raft.SetActive(false);
 

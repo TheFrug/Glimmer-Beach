@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [NonReorderable] //Don't remove this or Element 0 will be buggy and small bc idfk
     public Sound[] sounds;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
 
@@ -47,5 +48,10 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
         //Debug.Log("Playing: " + name);
+    }
+
+    public void Stop()
+    {
+        
     }
 }

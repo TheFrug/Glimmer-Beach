@@ -155,5 +155,8 @@ public class DialogManager : MonoBehaviour
         //Sets each panel inactive
         bodyTextPanel?.SetActive(false);
         speakerNamePanel?.SetActive(false);
+        
+        //Play sound when dialog interface closes
+        //AudioManager.instance.Play("raftDownSound");
     }
 }
