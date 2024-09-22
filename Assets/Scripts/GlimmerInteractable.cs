@@ -6,7 +6,7 @@ public class GlimmerInteractable : MonoBehaviour
 {
     public Dialog dialog;
     private DialogManager dManager;
-    private bool playerInRange;
+    public bool playerInRange;
     private GameObject player;
 
     private void Awake()

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CamTrigger : MonoBehaviour
 {
-    public Vector3 newCamPos, newPlayerPos;
+    [SerializeField] private Transform targetCamPosition;
+    public Vector3 playerChange;
 
     CamController camControl;
 
@@ -17,10 +18,9 @@ public class CamTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            camControl.minPos += newCamPos;
-            camControl.maxPos += newCamPos;
+            camControl.moveCamera(targetCamPosition);
 
-            other.transform.position += newPlayerPos;
+            other.transform.position += playerChange;
         }
     }
 }

@@ -28,7 +28,7 @@ public class DialogManager : MonoBehaviour
     [HideInInspector] public AudioClip clip;
     [HideInInspector] public string text;
     //TODO: Move inConversation from DialogManager to Player state machine.
-    [HideInInspector] public bool inConversation = false;
+    public bool inConversation = false;
     [SerializeField] private float typingSpeed;
 
     private Queue<string> textBlocksToShow; //This stores the text blocks that are loaded and have yet to be shown
