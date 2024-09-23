@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.59680223, g: 0.57593435, b: 0.6015657, a: 1}
+  m_IndirectSpecularColor: {r: 0.5968022, g: 0.5759343, b: 0.6015657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1452,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 7.666297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -1462,12 +1462,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1392746
+      value: 8.910833
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.3944359
+      value: -0.99968106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -1477,7 +1477,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9189235
+      value: -0.025253786
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -1492,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -226.462
+      value: -357.106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -3720,7 +3720,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9300003
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -3730,12 +3730,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1392746
+      value: 9.92
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2637105
+      value: -0.7664008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -3745,7 +3745,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.96460193
+      value: -0.64236265
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -3760,7 +3760,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -149.419
+      value: -280.064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a001372c7f061a94f9180e67cc5a2fc0,
         type: 3}
@@ -5058,6 +5058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014065596483078867, guid: 7836027051b6c454db04bf31a8ac72c7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9014065597242160689, guid: 7836027051b6c454db04bf31a8ac72c7,
         type: 3}
@@ -7600,6 +7605,18 @@ PrefabInstance:
       propertyPath: glimmerCount
       value: 
       objectReference: {fileID: 1781799459}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: raftDialog.textBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: raftDialog.textBlocks.Array.data[0]
+      value: 'got raft
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 2685124402493881677, guid: bc10fd6dc0e042e4ba40633f81988958,
         type: 3}
       propertyPath: m_Name

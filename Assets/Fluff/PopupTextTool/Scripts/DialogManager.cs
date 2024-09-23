@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
 
+    public static DialogManager Instance { get; private set; }
+
     [Header("UI Panels")]
     [Tooltip("Insert the UI panel that parents the main text of your dialog")]
     public GameObject bodyTextPanel;
@@ -34,6 +36,18 @@ public class DialogManager : MonoBehaviour
     private Queue<string> textBlocksToShow; //This stores the text blocks that are loaded and have yet to be shown
     private Queue<AudioClip> soundClipsToPlay; //This stores the audio clips that are loaded and have yet to be shown
 
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    
     void Start()
     {
 

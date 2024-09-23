@@ -50,12 +50,12 @@ public class Inventory : MonoBehaviour
     {
         glimmers += 1;
         SetCountText();
-
+        Debug.Log($"Glimmers = {glimmers}");
         if (glimmers == 4)
         {
             //TODO: Dialog can't be progressed or taken off the screen
             Debug.Log("Should pull up dialog now");
-            FindObjectOfType<DialogManager>().StartDialog(raftDialog);
+            DialogManager.Instance.StartDialog(raftDialog);
             raft = true;
         }
     }
