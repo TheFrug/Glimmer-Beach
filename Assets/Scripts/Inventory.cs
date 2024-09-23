@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance { get; private set; }
 
+
     public bool raft = false;
     public bool lantern = false;
     public bool sailcloth = false;
     public bool compass = false;
+
     public GameObject raftDown = null;
+    public TextMeshProUGUI glimmerCount;
 
     public Dialog raftDialog;
     public Dialog lanternDialog;
     public Dialog sailclothDialog;
     public Dialog compassDialog;
 
-    public float glimmers = 0;
+    public float glimmers;
 
     private void Awake()
     {
@@ -31,14 +35,23 @@ public class Inventory : MonoBehaviour
         {
             Instance = this;
         }
+
+        glimmers = 0;
+        SetCountText();
     }
 
+    void SetCountText() //Sets glimmer count
+    {
+        glimmerCount.text = "Glimmers: " + glimmers.ToString();
+    }
+
+    //Increases glimmer amount by 1 and updates scoreText element
     public void GetGlimmer()
     {
         glimmers += 1;
-        Debug.Log("I've got " + glimmers + " glimmers now. I just have " + (4-glimmers) + " to go!");
+        SetCountText();
 
-        if (glimmers == 1)
+        if (glimmers == 4)
         {
             //TODO: Dialog can't be progressed or taken off the screen
             Debug.Log("Should pull up dialog now");

@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     [NonReorderable] //Don't remove this or Element 0 will be buggy and small bc idfk
     public Sound[] sounds;
     private AudioSource audioSource;
-
+    
     // Start is called before the first frame update
 
     public static AudioManager instance;

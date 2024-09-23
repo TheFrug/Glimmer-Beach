@@ -102,7 +102,6 @@ public class DialogManager : MonoBehaviour
         {
             EndDialog();
             Destroy(currentGlimmer);
-            Inventory.Instance.GetGlimmer();
 
             return;
         }
@@ -143,6 +142,7 @@ public class DialogManager : MonoBehaviour
     //Closes relative panels
     public void EndDialog()
     {
+        currentGlimmer.GetComponentInChildren<GlimmerInteractable>().UseGlimmer();
         Debug.Log("Shutting Up now");
 
         player.GetComponent<playerInput>().freeMove = true;

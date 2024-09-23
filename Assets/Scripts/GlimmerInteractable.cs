@@ -59,8 +59,9 @@ public class GlimmerInteractable : MonoBehaviour
         dManager.StartDialog(dialog);
     }
 
-    private void UseGlimmer()
+    public void UseGlimmer()
     {
-        
+        Inventory.Instance.GetGlimmer(); //run GetGlimmer to increment glimmer count for player
+        Destroy(transform.parent.gameObject); //Removes Glimmer so it can't be seen twice
     }
 }
