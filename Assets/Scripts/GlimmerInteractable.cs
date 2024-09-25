@@ -36,6 +36,7 @@ public class GlimmerInteractable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            dManager.glyphPanel.SetActive(true);
             //Debug.Log("Hey! Over here!");
         }
     }
@@ -45,6 +46,7 @@ public class GlimmerInteractable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            dManager.glyphPanel.SetActive(false);
             //Debug.Log("See you later!");
 
             if (dManager.inConversation)

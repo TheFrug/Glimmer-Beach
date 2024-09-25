@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public bool lantern = false;
     public bool sailcloth = false;
     public bool compass = false;
+    [SerializeField] private float glimmersToWin; 
 
     public GameObject raftDown = null;
     public TextMeshProUGUI glimmerCount;
@@ -51,7 +52,7 @@ public class Inventory : MonoBehaviour
         glimmers += 1;
         SetCountText();
         Debug.Log($"Glimmers = {glimmers}");
-        if (glimmers == 4)
+        if (glimmers == glimmersToWin)
         {
             //TODO: Dialog can't be progressed or taken off the screen
             Debug.Log("Should pull up dialog now");
