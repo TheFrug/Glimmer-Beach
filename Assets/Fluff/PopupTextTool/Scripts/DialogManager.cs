@@ -16,6 +16,7 @@ public class DialogManager : MonoBehaviour
     public GameObject bodyTextPanel;
     [Tooltip("Insert the UI panel that parents the name of the speaker")]
     public GameObject speakerNamePanel;
+    public GameObject glyphPanel;
 
     [Header("UI Objects")]
     [Tooltip("Insert the text element that renders the main text you want in the dialog box")]
@@ -65,12 +66,16 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
+        glyphPanel.SetActive(false);
+
+        //freeze player movement
         FindObjectOfType<playerInput>().movement.x = 0;
         FindObjectOfType<playerInput>().movement.z = 0;
 
         dialogTemp = dialog;
 
         if (dialog.glimmer != null) {
+            Debug.Log("Currently playing: " + dialog);
 
             currentGlimmer = dialog.glimmer;
         }
@@ -156,21 +161,33 @@ public class DialogManager : MonoBehaviour
     //Closes relative panels
     public void EndDialog()
     {
-        currentGlimmer.GetComponentInChildren<GlimmerInteractable>().UseGlimmer();
         Debug.Log("Shutting Up now");
 
         player.GetComponent<playerInput>().freeMove = true;
+
+        //Sets each panel inactive
+        bodyTextPanel?.SetActive(false);
+        speakerNamePanel?.SetActive(false);
 
         //Resets all values that were stored for the interaction
         inConversation = false;
         dialogTemp = null;
         clip = null;
 
-        //Sets each panel inactive
-        bodyTextPanel?.SetActive(false);
-        speakerNamePanel?.SetActive(false);
+        currentGlimmer.GetComponentInChildren<GlimmerInteractable>().UseGlimmer();
         
         //Play sound when dialog interface closes
         //AudioManager.instance.Play("raftDownSound");
+    }
+
+    public void glyphPanelToggle(){
+        Debug.Log("glyph toggling");
+
+        if (!glyphPanel.activeInHierarchy){
+            glyphPanel.SetActive(true);
+        }
+        if (glyphPanel.activeInHierarchy){
+            glyphPanel.SetActive(false);
+        }
     }
 }
