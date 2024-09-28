@@ -55,16 +55,23 @@ public class RiverCrossing : MonoBehaviour
             Debug.Log("deploying");
             AudioManager.instance.Play("raftDownSound");
             raft.SetActive(true);
-            player.raftDown = raft;
+            player.raftDown = true;
 
             pointA.GetComponent<MeshRenderer>().enabled = true;
             pointB.GetComponent<MeshRenderer>().enabled = true;
         }
-        else if (player.raftDown)
+        else if (player.raftDown == true)
         {
-            AudioManager.instance.Play("raftUpSound");
-            player.raftDown = null;
-            raft.SetActive(false);
+            if (raft.activeInHierarchy == true)
+            {
+                AudioManager.instance.Play("raftUpSound");
+                player.raftDown = false;
+                raft.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Forgetting something?");
+            }
 
             if (onPointA)
             {

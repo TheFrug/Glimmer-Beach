@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     public bool compass = false;
     [SerializeField] private float glimmersToWin; 
 
-    public GameObject raftDown = null;
+    public bool raftDown = false;
     public TextMeshProUGUI glimmerCount;
 
     public Dialog raftDialog;
