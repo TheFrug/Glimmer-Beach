@@ -5021,7 +5021,7 @@ PrefabInstance:
     - target: {fileID: 9014065596483078865, guid: 7836027051b6c454db04bf31a8ac72c7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9014065596483078867, guid: 7836027051b6c454db04bf31a8ac72c7,
         type: 3}
@@ -7781,7 +7781,7 @@ PrefabInstance:
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7,
         type: 3}
       propertyPath: sounds.Array.data[3].name
-      value: raftDownSound
+      value: dialogEnd
       objectReference: {fileID: 0}
     - target: {fileID: 1339442198627193387, guid: e0bdb998d840c09498656d1a5f3564c7,
         type: 3}
