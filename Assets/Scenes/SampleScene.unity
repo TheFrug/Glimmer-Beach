@@ -2772,6 +2772,97 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &953809563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953809564}
+  - component: {fileID: 953809566}
+  - component: {fileID: 953809565}
+  - component: {fileID: 953809567}
+  m_Layer: 5
+  m_Name: RaftIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &953809564
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953809563}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.50364536, y: 0.50364536, z: 0.50364536}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 152160581}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -364, y: 142}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &953809565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953809563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2bcd09bce8204f748baac09440ebc1d7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &953809566
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953809563}
+  m_CullTransparentMesh: 1
+--- !u!114 &953809567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953809563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571a569f5fb7ead4cb07040799af99f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultIcon: {fileID: 21300000, guid: 2bcd09bce8204f748baac09440ebc1d7, type: 3}
+  noneIcon: {fileID: 21300000, guid: c0d0583eacb049f42a36b07642b07c65, type: 3}
 --- !u!1 &960126483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,7 +3664,7 @@ RectTransform:
   m_GameObject: {fileID: 1071417449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.28408, y: 0.13776816, z: 0.28408}
+  m_LocalScale: {x: 0.2070044, y: 0.10038938, z: 0.2070044}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1781799458}
@@ -3582,7 +3673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: -25}
+  m_AnchoredPosition: {x: 11, y: -9}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1071417451
@@ -5795,6 +5886,97 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1414492768}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1516830819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516830820}
+  - component: {fileID: 1516830822}
+  - component: {fileID: 1516830821}
+  - component: {fileID: 1516830823}
+  m_Layer: 5
+  m_Name: LanternIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1516830820
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516830819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.50364536, y: 0.50364536, z: 0.50364536}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 152160581}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -308, y: 142}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1516830821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516830819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 10964e45172f1874fb92df1d065963d5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1516830822
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516830819}
+  m_CullTransparentMesh: 1
+--- !u!114 &1516830823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516830819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571a569f5fb7ead4cb07040799af99f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultIcon: {fileID: 21300000, guid: 10964e45172f1874fb92df1d065963d5, type: 3}
+  noneIcon: {fileID: 21300000, guid: c0d0583eacb049f42a36b07642b07c65, type: 3}
 --- !u!114 &1523955178 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9014065596065187097, guid: 7836027051b6c454db04bf31a8ac72c7,
@@ -6488,6 +6670,97 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1414492768}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1664911186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664911187}
+  - component: {fileID: 1664911189}
+  - component: {fileID: 1664911188}
+  - component: {fileID: 1664911190}
+  m_Layer: 5
+  m_Name: CompassIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1664911187
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664911186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.50364536, y: 0.50364536, z: 0.50364536}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 152160581}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -251, y: 142}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1664911188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664911186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 69a2b3fdbda6f6e4286e158b861ee6b6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1664911189
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664911186}
+  m_CullTransparentMesh: 1
+--- !u!114 &1664911190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664911186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571a569f5fb7ead4cb07040799af99f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultIcon: {fileID: 21300000, guid: 69a2b3fdbda6f6e4286e158b861ee6b6, type: 3}
+  noneIcon: {fileID: 21300000, guid: c0d0583eacb049f42a36b07642b07c65, type: 3}
 --- !u!1 &1676771409
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,6 +8401,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
         type: 3}
+      propertyPath: raftIcon
+      value: 
+      objectReference: {fileID: 953809567}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: compassIcon
+      value: 
+      objectReference: {fileID: 1664911190}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: lanternIcon
+      value: 
+      objectReference: {fileID: 1516830823}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
       propertyPath: glimmerCount
       value: 
       objectReference: {fileID: 1781799459}
@@ -8138,7 +8426,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
         type: 3}
+      propertyPath: glimmersToRaft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: glimmersToCompass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: glimmersToLantern
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
       propertyPath: raftDialog.textBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: compassDialog.textBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: lanternDialog.textBlocks.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
@@ -8147,6 +8460,26 @@ PrefabInstance:
       value: 'got raft yippee!
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: sailclothDialog.textBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: compassDialog.textBlocks.Array.data[0]
+      value: Holy shit!  A compass!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: lanternDialog.textBlocks.Array.data[0]
+      value: Well done.  Here's the lantern
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685124402493881676, guid: bc10fd6dc0e042e4ba40633f81988958,
+        type: 3}
+      propertyPath: sailclothDialog.textBlocks.Array.data[0]
+      value: Here's the Sailcloth.  Good job.
       objectReference: {fileID: 0}
     - target: {fileID: 2685124402493881677, guid: bc10fd6dc0e042e4ba40633f81988958,
         type: 3}
