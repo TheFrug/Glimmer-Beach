@@ -10,6 +10,7 @@ public class RiverCrossing : MonoBehaviour
     [SerializeField] public GameObject raft;
     public bool onPointA = false; //Keeps track of if player is on one of the points
     public bool onPointB = false;
+    public Dialog noRaftDialog;
 
     private void Start()
     {
@@ -57,8 +58,10 @@ public class RiverCrossing : MonoBehaviour
             raft.SetActive(true);
             player.raftDown = true;
 
-            pointA.GetComponent<MeshRenderer>().enabled = true;
-            pointB.GetComponent<MeshRenderer>().enabled = true;
+            pointA.SetActive(true);
+            pointB.SetActive(true);
+            pointA.GetComponent<ParticleSystem>().Play();
+            pointB.GetComponent<ParticleSystem>().Play();
         }
         else if (player.raftDown == true)
         {
@@ -67,22 +70,34 @@ public class RiverCrossing : MonoBehaviour
                 AudioManager.instance.Play("raftUpSound");
                 player.raftDown = false;
                 raft.SetActive(false);
+                
+                if (onPointA)
+                {
+                    pointA.SetActive(true);
+                    pointB.SetActive(false);
+                    /*
+                    pointA.GetComponent<ParticleSystem>().Play();
+                    pointB.GetComponent<ParticleSystem>().Stop();
+                    */
+                }
+                if (onPointB)
+                {
+                    Debug.Log("Activating from point B");
+                    pointA.SetActive(false);
+                    pointB.SetActive(true);
+
+                    /*
+                    pointA.GetComponent<ParticleSystem>().Stop();
+                    pointB.GetComponent<ParticleSystem>().Play();
+                    */
+                }
             }
             else
             {
-                Debug.Log("Forgetting something?");
+                DialogManager.Instance.StartDialog(noRaftDialog);
             }
 
-            if (onPointA)
-            {
-                pointA.GetComponent<MeshRenderer>().enabled = true;
-                pointB.GetComponent<MeshRenderer>().enabled = false;
-            }
-            if (onPointB)
-            {
-                pointA.GetComponent<MeshRenderer>().enabled = false;
-                pointB.GetComponent<MeshRenderer>().enabled = true;
-            }
+            
 
         }
     }

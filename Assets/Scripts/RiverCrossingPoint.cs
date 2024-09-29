@@ -17,7 +17,7 @@ public class RiverCrossingPoint : MonoBehaviour
     private void Start()
     {
         rcManager = GetComponentInParent<RiverCrossing>(); 
-        GetComponent<MeshRenderer>().enabled = false; //No points should be visible at first
+        //GetComponent<MeshRenderer>().enabled = false; //No points should be visible at first
     }
 
     private void Update()
@@ -26,7 +26,7 @@ public class RiverCrossingPoint : MonoBehaviour
         {
             if (Inventory.Instance.raft && !pointALive)
             {
-                GetComponent<MeshRenderer>().enabled = true;
+                GetComponent<ParticleSystem>().Play();
                 pointALive = true;
             }
         }

@@ -174,8 +174,11 @@ public class DialogManager : MonoBehaviour
         dialogTemp = null;
         clip = null;
 
-        currentGlimmer.GetComponentInChildren<GlimmerInteractable>().UseGlimmer();
-        
+        if (currentGlimmer != null)
+        {
+            currentGlimmer.GetComponentInChildren<GlimmerInteractable>().UseGlimmer();
+        }
+
         //Play sound when dialog interface closes
         //AudioManager.instance.Play("raftDownSound");
     }
