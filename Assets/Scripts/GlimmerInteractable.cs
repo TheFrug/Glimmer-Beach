@@ -12,6 +12,9 @@ public class GlimmerInteractable : MonoBehaviour
     [SerializeField] bool raftPickup;
     [SerializeField] bool lanternPickup;
     [SerializeField] bool compassPickup;
+    [SerializeField] bool winGlimmer = false;
+    [SerializeField] GameObject WinGlimmer;
+    [SerializeField] private GameObject winScreen;
 
     private void Awake()
     {
@@ -75,11 +78,26 @@ public class GlimmerInteractable : MonoBehaviour
         if (lanternPickup == true)
         {
             Inventory.Instance.GetLantern();
+            if(player.GetComponent<Inventory>().compass == true)
+            {
+                WinGlimmer.SetActive(true);
+            }
         }
 
         if (compassPickup == true)
         {
             Inventory.Instance.GetCompass();
+            if (player.GetComponent<Inventory>().lantern == true)
+            {
+                WinGlimmer.SetActive(true);
+            }
+        }
+
+        if(winGlimmer == true)
+        {
+            Debug.Log("Win the game");
+            player.GetComponent<playerInput>().freeMove = false;
+            winScreen.SetActive(true);
         }
 
         Inventory.Instance.GetGlimmer(); //run GetGlimmer to increment glimmer count for player

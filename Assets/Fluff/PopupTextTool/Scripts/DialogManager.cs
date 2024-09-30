@@ -193,4 +193,10 @@ public class DialogManager : MonoBehaviour
             glyphPanel.SetActive(false);
         }
     }
+
+    public void Quit()
+    {
+        Debug.Log("Working");
+        Application.Quit();
+    }
 }

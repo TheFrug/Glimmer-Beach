@@ -71,12 +71,16 @@ public class Inventory : MonoBehaviour
     {
         DialogManager.Instance.StartDialog(lanternDialog);
         lanternIcon.setIcon(1);
+
+        lantern = true;
     }
 
     public void GetCompass()
     {
         DialogManager.Instance.StartDialog(compassDialog);
         compassIcon.setIcon(1);
+
+        compass = true;
     }
 
     public void toggleRaft()
