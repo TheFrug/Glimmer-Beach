@@ -16,15 +16,15 @@ public class iconUI : MonoBehaviour
         sourceImage.sprite = noneIcon;
     }
 
-    public void toggleIcon()
+    public void setIcon(float Value)
     {
-        if(sourceImage.sprite = defaultIcon)
-        {
-            sourceImage.sprite = noneIcon;
-        }
-        else if (sourceImage.sprite = noneIcon)
+        if (Value == 1)
         {
             sourceImage.sprite = defaultIcon;
+        }
+        if (Value == 2)
+        {
+            sourceImage.sprite = noneIcon;
         }
     }
 

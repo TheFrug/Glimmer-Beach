@@ -8,6 +8,7 @@ public class RiverCrossing : MonoBehaviour
     [SerializeField] public GameObject pointA;
     [SerializeField] public GameObject pointB;
     [SerializeField] public GameObject raft;
+    [SerializeField] public GameObject bounds;
     public bool onPointA = false; //Keeps track of if player is on one of the points
     public bool onPointB = false;
     public Dialog noRaftDialog;
@@ -56,7 +57,12 @@ public class RiverCrossing : MonoBehaviour
             Debug.Log("deploying");
             AudioManager.instance.Play("raftDownSound");
             raft.SetActive(true);
-            player.raftDown = true;
+            player.toggleRaft();
+
+            if (bounds != null)
+            {
+                bounds.SetActive(false);
+            }
 
             pointA.SetActive(true);
             pointB.SetActive(true);
@@ -68,17 +74,19 @@ public class RiverCrossing : MonoBehaviour
             if (raft.activeInHierarchy == true)
             {
                 AudioManager.instance.Play("raftUpSound");
-                player.raftDown = false;
+                player.toggleRaft();
                 raft.SetActive(false);
-                
+
+                if (bounds != null)
+                {
+                    bounds.SetActive(true);
+                }
+
                 if (onPointA)
                 {
                     pointA.SetActive(true);
                     pointB.SetActive(false);
-                    /*
-                    pointA.GetComponent<ParticleSystem>().Play();
-                    pointB.GetComponent<ParticleSystem>().Stop();
-                    */
+
                 }
                 if (onPointB)
                 {
@@ -86,19 +94,12 @@ public class RiverCrossing : MonoBehaviour
                     pointA.SetActive(false);
                     pointB.SetActive(true);
 
-                    /*
-                    pointA.GetComponent<ParticleSystem>().Stop();
-                    pointB.GetComponent<ParticleSystem>().Play();
-                    */
                 }
             }
             else
             {
                 DialogManager.Instance.StartDialog(noRaftDialog);
             }
-
-            
-
         }
     }
 }

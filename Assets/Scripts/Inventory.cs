@@ -10,7 +10,6 @@ public class Inventory : MonoBehaviour
 
     public bool raft = false;
     public bool lantern = false;
-    public bool sailcloth = false;
     public bool compass = false;
     [SerializeField] private float glimmersToRaft;
     [SerializeField] private float glimmersToLantern;
@@ -24,7 +23,6 @@ public class Inventory : MonoBehaviour
 
     public Dialog raftDialog;
     public Dialog lanternDialog;
-    public Dialog sailclothDialog;
     public Dialog compassDialog;
 
     public float glimmers;
@@ -57,24 +55,44 @@ public class Inventory : MonoBehaviour
         glimmers += 1;
         SetCountText();
         Debug.Log($"Glimmers = {glimmers}");
-        if (glimmers == glimmersToRaft)
-        {
-            //TODO: Dialog can't be progressed or taken off the screen
+        
+    }
+
+    public void GetRaft()
+    {
             Debug.Log("Should pull up dialog now");
             DialogManager.Instance.StartDialog(raftDialog);
             raft = true;
 
-            raftIcon.toggleIcon();
-        }
-        if (glimmers == glimmersToLantern)
+            raftIcon.setIcon(1);
+    } 
+
+    public void GetLantern()
+    {
+        DialogManager.Instance.StartDialog(lanternDialog);
+        lanternIcon.setIcon(1);
+    }
+
+    public void GetCompass()
+    {
+        DialogManager.Instance.StartDialog(compassDialog);
+        compassIcon.setIcon(1);
+    }
+
+    public void toggleRaft()
+    {
+        Debug.Log("Toggling raft");
+        if(raftDown == false)
         {
-            DialogManager.Instance.StartDialog(lanternDialog);
-            lanternIcon.toggleIcon();
+            Debug.Log("Raft icon should be turning off");
+            raftDown = true;
+            raftIcon.setIcon(2);
         }
-        if(glimmers == glimmersToCompass)
+        else if(raftDown == true)
         {
-            DialogManager.Instance.StartDialog(compassDialog);
-            compassIcon.toggleIcon();
+            Debug.Log("Raft icon should be turning on");
+            raftDown = false;
+            raftIcon.setIcon(1);
         }
     }
 }

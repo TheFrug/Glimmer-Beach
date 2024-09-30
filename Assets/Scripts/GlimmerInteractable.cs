@@ -9,6 +9,10 @@ public class GlimmerInteractable : MonoBehaviour
     public bool playerInRange;
     private GameObject player;
 
+    [SerializeField] bool raftPickup;
+    [SerializeField] bool lanternPickup;
+    [SerializeField] bool compassPickup;
+
     private void Awake()
     {
         player = GameObject.Find("Player");
@@ -63,6 +67,21 @@ public class GlimmerInteractable : MonoBehaviour
 
     public void UseGlimmer()
     {
+        if (raftPickup == true)
+        {
+            Inventory.Instance.GetRaft();
+        }
+
+        if (lanternPickup == true)
+        {
+            Inventory.Instance.GetLantern();
+        }
+
+        if (compassPickup == true)
+        {
+            Inventory.Instance.GetCompass();
+        }
+
         Inventory.Instance.GetGlimmer(); //run GetGlimmer to increment glimmer count for player
         Destroy(transform.parent.gameObject); //Removes Glimmer so it can't be seen twice
     }
